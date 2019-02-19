@@ -1,0 +1,186 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css" >
+.toolkitstyle {
+	background-color:#B3B3B3;
+	-webkit-border-top-left-radius:17px;
+	border-top-left-radius:17px;
+	-o-border-top-left-radius:17px;
+	-ms-border-top-left-radius:17px;
+	-moz-border-radius-topleft:17px;
+	-webkit-border-top-right-radius:17px;
+	border-top-right-radius:17px;
+	-o-border-top-right-radius:17px;
+	-ms-border-top-right-radius:17px;
+	-moz-border-radius-topright:17px;
+	-webkit-border-bottom-right-radius:17px;
+	border-bottom-right-radius:17px;
+	-o-border-bottom-right-radius:17px;
+	-ms-border-bottom-right-radius:17px;
+	-moz-border-radius-bottomright:17px;
+	-webkit-border-bottom-left-radius:17px;
+	border-bottom-left-radius:17px;
+	-o-border-bottom-left-radius:17px;
+	-ms-border-bottom-left-radius:17px;
+	-moz-border-radius-bottomleft:17px;
+	-webkit-box-shadow:rgb(25, 25, 25) 2px 4px 4px, rgb(0, 0, 0) 0px 0px 0px inset;
+	box-shadow:rgb(25, 25, 25) 2px 4px 4px, rgb(0, 0, 0) 0px 0px 0px inset;
+	-o-box-shadow:rgb(25, 25, 25) 2px 4px 4px, rgb(0, 0, 0) 0px 0px 0px inset;
+	-ms-box-shadow:rgb(25, 25, 25) 2px 4px 4px, rgb(0, 0, 0) 0px 0px 0px inset;
+	-moz-box-shadow:rgb(25, 25, 25) 2px 4px 4px, rgb(0, 0, 0) 0px 0px 0px inset;
+	font-family:Arial;
+	font-size:22pt;
+	color:#333333;
+	text-shadow:rgb(0, 0, 0) 0px 0px 0px;
+	text-align:center;
+	
+}
+
+</style>
+</head><body style="left:97px; top:42px; font-family:Arial; " >
+
+<p class="toolkitstyle" style="height:50px;" >PrinterOn Enterprise API Tester</p><br><br>
+
+<p style="font-family:arial; font-style:inherit;" >NOTE:  Before you start, make sure you update the HTML in this file to point to your server.<BR><BR>
+To test the API, first enter an email address (or userID), the destination printer and select a document.  Select Submit to start.  Your job will be submitted to the server.<BR><BR>
+When the page reloads, the response is in XML, the browser may not parse the response so you may need to "View Source" to retrieve the Job Reference ID returned by the API.<BR><BR>
+To check the status of the job, enter the same user email (userID), destination printer name and the returned Job Reference ID into the Status Form.  Submit to get the results.<BR><BR>
+The job is completed when a jobComplete indicates SUCCESS or FAILURE or a jobState of 7, 8 or 9 is returned.
+
+</p><BR><BR>
+<h3>docapi10-1</h3>
+
+<div style="border-image:initial; padding-left:10px; border:1px solid #000000; " >
+<p style="font-family:arial; font-weight:bold; " "="" font-style:inherit;="" font-weight:bold;="" >PrinterOn Document Simple Document Submission</p>
+
+
+
+<form action="http://54.178.129.163:8080/DocApi" enctype="multipart/form-data" method="POST" >
+UserID\UserEmail:  <input type="text" value="" name="userEmail" /><br>
+Job Destination:  <input type="text" name="jobDestination" value="" /><br><br>
+<!-- ClientSWKey:    <input type="text" value="optional" name="clientSWKey" /><br><br> -->
+Select a File:    <input type="file" name="documentURI" /><br><br>
+
+<input type="hidden" name="docAPIfunc" value="DocPrint" />
+<input type="hidden" name="clientSWProtocol" value="DocAPI" />
+
+<input type="hidden" name="clientSWName" value="IntegratedAppName" />
+<input type="hidden" name="clientSWKey" value="s114su137i15c" />
+<input type="hidden" name="clientSWVer" value="1.0.1" />
+
+
+<input type="hidden" name="clientAPIVer " value="1.0.0" />
+<input type="submit" />
+
+<br></form>
+</div>
+<br>
+
+<div style="border-image:initial; padding-left:10px; border:1px solid #000000; " >
+<p style="font-weight:bold; " >PrinterOn Document Simple Job Status Check</p>
+
+<form action="http://54.178.129.163:8080/DocApi" enctype="multipart/form-data" method="POST" style="font-weight:inherit; " >
+UserID\UserEmail:  <input type="text" value="" name="userEmail" /><br>
+Job Destination:  <input type="text" name="jobDestination" value="" /><br>
+Job Reference ID:  <input type="text" name="jobReferenceID" value="" /><br><br>
+<!-- ClientSWKey:    <input type="text" value="optional" name="clientSWKey" /><br><br> -->
+<input type="hidden" name="docAPIfunc" value="DocStatus" />
+<input type="hidden" name="clientSWProtocol" value="DocAPI" />
+<input type="hidden" name="clientSWName" value="IntegratedAppName" />
+<input type="hidden" name="clientSWKey" value="s114su137i15c" />
+<input type="hidden" name="clientSWVer" value="1.0.1" />
+<input type="hidden" name="clientAPIVer " value="1.0.0" />
+<input type="submit" />
+
+<br></form>
+</div>
+
+<h3>docapi10-2</h3>
+<div style="border-image:initial; padding-left:10px; border:1px solid #000000; " >
+<p style="font-family:arial; font-weight:bold; " "="" font-style:inherit;="" font-weight:bold;="" >PrinterOn Document Simple Document Submission</p>
+<form action="http://54.178.131.235:8080/DocApi" enctype="multipart/form-data" method="POST" >
+UserID\UserEmail:  <input type="text" value="" name="userEmail" /><br>
+Job Destination:  <input type="text" name="jobDestination" value="" /><br><br>
+<!-- ClientSWKey:    <input type="text" value="optional" name="clientSWKey" /><br><br> -->
+Select a File:    <input type="file" name="documentURI" /><br><br>
+
+<input type="hidden" name="docAPIfunc" value="DocPrint" />
+<input type="hidden" name="clientSWProtocol" value="DocAPI" />
+
+<input type="hidden" name="clientSWName" value="IntegratedAppName" />
+<input type="hidden" name="clientSWKey" value="s114su137i15c" />
+<input type="hidden" name="clientSWVer" value="1.0.1" />
+
+
+<input type="hidden" name="clientAPIVer " value="1.0.0" />
+<input type="submit" />
+
+<br></form>
+</div>
+<br>
+
+
+<div style="border-image:initial; padding-left:10px; border:1px solid #000000; " >
+<p style="font-family:arial; font-weight:bold; " "="" font-style:inherit;="" font-weight:bold;="" >PrinterOn Document Simple Document Submission</p>
+<form action="http://54.178.131.235:8080/DocApi" enctype="multipart/form-data" method="POST" style="font-weight:inherit; " >
+UserID\UserEmail:  <input type="text" value="" name="userEmail" /><br>
+Job Destination:  <input type="text" name="jobDestination" value="" /><br>
+Job Reference ID:  <input type="text" name="jobReferenceID" value="" /><br><br>
+<!-- ClientSWKey:    <input type="text" value="optional" name="clientSWKey" /><br><br> -->
+<input type="hidden" name="docAPIfunc" value="DocStatus" />
+<input type="hidden" name="clientSWProtocol" value="DocAPI" />
+<input type="hidden" name="clientSWName" value="IntegratedAppName" />
+<input type="hidden" name="clientSWKey" value="s114su137i15c" />
+<input type="hidden" name="clientSWVer" value="1.0.1" />
+<input type="hidden" name="clientAPIVer " value="1.0.0" />
+<input type="submit" />
+
+<br></form>
+</div>
+
+<br>
+<h3>new-docapi10.printeron.net</h3>
+
+<div style="border-image:initial; padding-left:10px; border:1px solid #000000; " >
+<p style="font-family:arial; font-weight:bold; " "="" font-style:inherit;="" font-weight:bold;="" >PrinterOn Document Simple Document Submission</p>
+
+<form action="http://new-docapi10.printeron.net/DocApi" enctype="multipart/form-data" method="POST" >
+UserID\UserEmail:  <input type="text" value="" name="userEmail" /><br>
+Job Destination:  <input type="text" name="jobDestination" value="" /><br><br>
+<!-- ClientSWKey:    <input type="text" value="optional" name="clientSWKey" /><br><br> -->
+Select a File:    <input type="file" name="documentURI" /><br><br>
+
+<input type="hidden" name="docAPIfunc" value="DocPrint" />
+<input type="hidden" name="clientSWProtocol" value="DocAPI" />
+
+<input type="hidden" name="clientSWName" value="IntegratedAppName" />
+<input type="hidden" name="clientSWKey" value="s114su137i15c" />
+<input type="hidden" name="clientSWVer" value="1.0.1" />
+
+
+<input type="hidden" name="clientAPIVer " value="1.0.0" />
+<input type="submit" />
+
+<br></form>
+</div>
+<br>
+
+<div style="border-image:initial; padding-left:10px; border:1px solid #000000; " >
+<p style="font-weight:bold; " >PrinterOn Document Simple Job Status Check</p>
+
+<form action="http://new-docapi10.printeron.net/cpslite/DocApi" enctype="multipart/form-data" method="POST" style="font-weight:inherit; " >
+UserID\UserEmail:  <input type="text" value="" name="userEmail" /><br>
+Job Destination:  <input type="text" name="jobDestination" value="" /><br>
+Job Reference ID:  <input type="text" name="jobReferenceID" value="" /><br><br>
+<!-- ClientSWKey:    <input type="text" value="optional" name="clientSWKey" /><br><br> -->
+<input type="hidden" name="docAPIfunc" value="DocStatus" />
+<input type="hidden" name="clientSWProtocol" value="DocAPI" />
+<input type="hidden" name="clientSWName" value="IntegratedAppName" />
+<input type="hidden" name="clientSWKey" value="32dzADFmjla4n73RI7WD1ii528rjddR9" />
+<input type="hidden" name="clientSWVer" value="1.0.1" />
+<input type="hidden" name="clientAPIVer " value="1.0.0" />
+<input type="submit" />
+
+<br></form>
+</div>
+<br></body></html>
